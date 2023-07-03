@@ -5,11 +5,15 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
+    'name' => 'AstroDev', 
+    'defaultRoute' => 'main',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log',],
     'aliases' => [
-        '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@bower' =>  '@vendor/bower-asset',
+        '@npm'   =>  '@vendor/npm-asset',
+        '@home' => '/',
+        '@adminHome' => '/admin/home', 
     ],
     'components' => [
         'request' => [
@@ -42,14 +46,13 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        */
+        
     ],
     'params' => $params,
 ];

@@ -37,6 +37,7 @@ class LoginForm extends Model
 
     /**
      * Validates the password.
+        // 'brandLabel' => Yii::$app->name,
      * This method serves as the inline validation for password.
      *
      * @param string $attribute the attribute currently being validated
