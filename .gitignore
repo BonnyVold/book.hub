@@ -42,3 +42,6 @@ Vagrantfile
 /mail
 yii.bat
 /runtime
+
+LICENSE.md
+README.md
