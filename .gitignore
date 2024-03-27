@@ -44,4 +44,5 @@ yii.bat
 /runtime
 
 *.md
+README.md
 docker-compose.yml
