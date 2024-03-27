@@ -47,3 +47,7 @@ README.md
 /LICENSE.md
 *.md
 docker-compose.yml
+# config ignore 
+/config/*
+.php-cs-fixer.cache
+*.cache
