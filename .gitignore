@@ -43,6 +43,5 @@ Vagrantfile
 yii.bat
 /runtime
 
-LICENSE
-README
+*.md
 docker-compose.yml
