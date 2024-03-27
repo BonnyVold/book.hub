@@ -45,4 +45,5 @@ yii.bat
 
 README.md
 /LICENSE.md
+*.md
 docker-compose.yml
