@@ -10,9 +10,20 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\AccessSwitchPhModel;
+use yii\captcha\CaptchaAction;
 
 class SiteController extends Controller
 {
+    // public function beforeAction($action)
+    // {
+    // }
+
+    // public function afterAction($action, $result)
+    // {
+    //     var_dump("after action function work!");
+    //     echo($result);
+    // }
+
     /**
      * {@inheritdoc}
      */
@@ -62,6 +73,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        var_dump(get_class_vars(self::class));
+        die();
+        // Yii::$app->session->setFlash('test', 'just test flash!');
         return $this->render('index');
     }
 
@@ -70,7 +84,7 @@ class SiteController extends Controller
      *
      * @return Response|string
      */
-    public function actionLogin()
+    public function actionLogin(): Response|string
     {
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
@@ -126,5 +140,14 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
-    
+
+    public function actionGetNewMatch()
+    {
+        $this->layout = false;
+        // echo "<pre>";
+        // var_dump($this);
+        // echo "</pre>";
+        // die();
+    }
+
 }

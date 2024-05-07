@@ -4,16 +4,23 @@ $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
-    'id' => 'basic',
-    'name' => 'AstroDev', 
-    'defaultRoute' => 'main',
+    'id' => 'bookhub',
+    'name' => 'BookHub',
+    'layout' => 'main_dev.php',
+    'defaultRoute' => 'store',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log',],
+    'modules' => [
+        'forum' => [
+            'class' => 'app\modules\forum\Forum',
+        ]
+    ],
     'aliases' => [
         '@bower' =>  '@vendor/bower-asset',
         '@npm'   =>  '@vendor/npm-asset',
         '@home' => '/',
-        '@adminHome' => '/admin/home', 
+        '@adminHome' => '/admin/home',
+        '@mainBookIcon' => 'icons/book_main.svg',
     ],
     'components' => [
         'request' => [
@@ -50,9 +57,13 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'tests' => 'test/test-action',
             ],
         ],
-        
+        'session' => [
+            'class' => 'yii\web\DbSession',
+        ],
+
     ],
     'params' => $params,
 ];
